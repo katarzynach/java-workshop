@@ -46,4 +46,11 @@ public class InvestigationService {
     public void deleteInvestigation(Long id) {
         investigationRepository.delete(id);
     }
+
+    public Investigation createInvestigation(Long transactionId, String reason) {
+        return investigationRepository.create(transactionId, reason);
+    }
+
+
+
 }

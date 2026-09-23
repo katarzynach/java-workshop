@@ -34,4 +34,10 @@ public class InvestigationRepository {
                 investigation -> investigation.getId().equals(id)
         );
     }
+
+    public Investigation create(Long transactionId, String reason) {
+        Investigation investigation = new Investigation(nextId++, transactionId, reason, "NEW");
+        investigations.add(investigation);
+        return investigation;
+    }
 }

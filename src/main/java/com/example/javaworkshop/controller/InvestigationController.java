@@ -39,10 +39,12 @@ public class InvestigationController {
             @Parameter(description = "ID of the transaction to investigate") @RequestParam Long transactionId,
             @Parameter(description = "Reason for the investigation") @RequestParam String reason) {
 
-        // TODO: Implement the logic to create a new investigation
-        return null;
-    }
+        if (transactionId == null || reason == null || reason.isEmpty()) {
+            throw new IllegalArgumentException("Transaction ID and reason must not be null or empty.");
+        }
 
+        return investigationService.createInvestigation(transactionId, reason);
+    }
     @PutMapping("/{id}")
     @Operation(summary = "Update an investigation", description = "Update the status or reason of an investigation")
     public Investigation updateInvestigation(
