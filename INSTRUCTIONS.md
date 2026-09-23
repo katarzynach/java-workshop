@@ -48,3 +48,21 @@ All tests should pass:
 4 / 4 TESTS PASSED
 
 Remember: a failing test does not necessarily mean that the application code is wrong. The test itself can contain a mistake.
+
+**Additional Task - Suspicious Transactions Endpoint**
+
+_Your Mission_
+The existing endpoint returns all transactions, but investigators need a focused view of potentially suspicious activity.
+Add an additional endpoint that returns only suspicious transactions according to the criteria from the first task.
+
+_Your Task_
+You should:
+
+Add a dedicated endpoint for suspicious transactions
+Document the new endpoint in Swagger UI
+Add unit tests for new code - covering suspicious and non-suspicious transactions
+
+_Your Goal_
+The new endpoint returns only suspicious transactions
+There is no change old enpoints
+All tests should pass
