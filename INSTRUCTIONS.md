@@ -64,5 +64,43 @@ Add unit tests for new code - covering suspicious and non-suspicious transaction
 
 _Your Goal_
 The new endpoint returns only suspicious transactions
+
+**Optional Tasks**
+
+1. **Add Validation to Endpoints**
+    - Add input validation to the @Controller endpoints (e.g., ensure `transactionId` is not null or negative, `reason` is not empty).
+    - Use Spring Boot's `@Valid` and validation annotations like `@NotNull`, `@Size`, etc.
+
+2. **Improve Swagger Documentation**
+    - Add more detailed descriptions to the Swagger annotations for all endpoints.
+    - Include examples for request parameters and responses.
+
+3. **Add Logging**
+    - Add basic logging to the @Service methods
+    - Log method entry, exit, and any important events (e.g., when an investigation is created or updated).
+
+4. **Add Pagination to Transactions Endpoint**
+    - Modify the `getAllTransactions` endpoint to support pagination using query parameters (`page`, `size`).
+    - Return paginated results instead of the full list.
+
+5. **Add Filtering to Investigations**
+    - Add query parameters to the `getAllInvestigations` endpoint to filter investigations by `status` or `reason`.
+    - Implement the filtering logic in the `InvestigationRepository`.
+
+6. **Refactor Repositories to Use Spring Data JPA**
+    - Replace the current in-memory repository implementations with Spring Data JPA repositories.
+    - Use an embedded database like H2 for persistence.
+
+7. **Add Unit Tests for Edge Cases**
+    - Write additional unit tests for edge cases in the `InvestigationService` and `TransactionService`.
+    - Examples: invalid IDs, null inputs, or empty lists.
+
+8. **Optimize Suspicious Transactions Logic**
+    - Refactor the logic for identifying suspicious transactions to make it more efficient.
+
+
+**Bonus Task**
+- **Design a Dashboard**
+    - Create a simple HTML page (or use Swagger UI) to display investigations and suspicious transactions in a user-friendly format.
 There is no change old enpoints
 All tests should pass
